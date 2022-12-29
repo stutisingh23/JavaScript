@@ -1,0 +1,37 @@
+function fruitProcessor(apples, oranges){
+    console.log(apples, oranges);
+    const juice= `Juice with ${apples} apples and ${oranges} oranges`;
+    return juice;
+}
+fruitProcessor(4, 5);
+const valueReturn = fruitProcessor(2, 0);
+console.log(valueReturn);
+
+/* Function Declaration*/
+function sum(a, b){
+    console.log(a, b);
+    return c= a+b;
+}
+    sum(10,15);
+    let result = sum(10,15);
+    console.log(result);
+
+/* Function Expression*/
+const sum2 = function(a,b){
+    return c = a+b;
+}
+    let value=sum2(10, 20);
+    console.log(value);
+
+/* Arrow Function with single parameter */
+const calcAge = birthyear => 2037-birthyear;
+const age = calcAge(1991);
+console.log(`age is ${age}`);
+
+/* Arrow Function with 2 parameter */
+const sum3 = (a,b)=> {
+    return c= a+b;
+}
+let cresult = sum3(13, 12);
+console.log(cresult);
+ console.log(sum3(11, 12));
