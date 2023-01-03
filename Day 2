@@ -1,0 +1,56 @@
+const calcAge = function(birthYear){
+    return 2037-birthYear;
+}
+const years = [1990, 1967, 2002, 2009, 2012, 2018];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length-1]);
+console.log(age1, age2, age3);
+
+const ages = [age1, age2, age3]
+const ages1 = [calcAge(years[0]), calcAge(years[3])]
+console.log(ages);
+console.log(ages1);
+
+
+
+const friends = ['Ram', 'Sita', 'Jay'];
+
+// Add elements in Array
+
+friends.push('Rob'); //Pushing or adding new data in Array
+const newLength = friends.push('Robby');//adding new data in Array and storing it in a variable
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('Rocky'); // Method which adds element at the beginning of the Array.
+console.log(friends);
+
+// Remove elements in Array
+
+friends.pop(); // Removes Last element from Array
+const popped = friends.pop();
+console.log(friends);
+console.log(popped);
+
+friends.shift(); // Removes First element from Array
+console.log(friends);
+
+// Return the index of that array element
+
+console.log(friends.indexOf('Jay'));
+console.log(friends.indexOf('Sita'));
+
+// ES6 method include to write conditions.
+
+friends.push(22);
+console.log(friends.includes('Steven')); //checks if that string is present inside array
+console.log(friends.includes(22));
+
+if(friends.includes('24')){
+    console.log("You have a friend called with this name");
+}
+else{
+    console.log("Sorry");
+}
