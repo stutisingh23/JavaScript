@@ -1,0 +1,65 @@
+let students = ['Ram', 'Rohan', 'Shyam', 'Mohan', ['Sita', 'Pooja', "x"]];
+
+//Accessing Nested Array by 2nd way
+const boys = students[4];
+const girl = boys[2];
+console.log(girl);
+
+//Accessing Nested Array by 2nd way
+const ad = students[4][2];
+console.log(ad);
+
+//Accessing Nested Array by Destructuring
+
+let [,,,,[,girl2]]=['Ram', 'Rohan', 'Shyam', 'Mohan', ['Sita', 'Pooja', "x"]];
+console.log(girl2);
+
+
+//Rest Parameter using a function with 2 parameter and 1 rest parameter
+function myBio(fName, lName, ...otherInfo){
+    console.log(otherInfo);
+    return otherInfo;
+}
+let result = myBio("Stuti", "Singh", "Thomson Reuters", "Developer", "F");
+console.log(result);
+
+
+//Define a destructuring object with two regular variables and one rest variable
+const {fName, lName, ...otherInfo} ={
+    fName : "Stuti",
+    lName : "Singh",
+    companyName : "TR",
+    Gender : "Female"
+}
+console.log(otherInfo);
+
+//1st Example of Spread operator 
+    var array1 = [10, 20, 30, 40, 50];
+    var array2 = [...array1, 60];
+    console.log(array2);
+
+//1st Example of Spread operator using object
+    const obj = {
+        firstname: "Divit",
+        lastname: "Patidar",
+    };
+    const obj2 = { ...obj };
+    console.log(obj2);
+
+//Concat Method
+    const merged = array1.concat(array2);
+    console.log(merged);
+
+//Join method
+    let ar1 = ['a','b','c','d'];
+    const joined = ar1.join('<=>');
+    console.log(joined);
+
+//Fill method
+    const color = ['red', 'blue', 'green'];
+    color.fill('pink');
+    console.log(color);
+
+    const colors = ['red', 'blue', 'green'];
+    colors.fill('pink', 1, colors.length);
+    console.log(colors);
