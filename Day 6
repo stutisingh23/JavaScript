@@ -1,0 +1,182 @@
+const calcAge = function(birthYear){
+    return 2037-birthYear;
+}
+const years = [1990, 1967, 2002, 2009, 2012, 2018];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length-1]);
+console.log(age1, age2, age3);
+
+const ages = [age1, age2, age3]
+const ages1 = [calcAge(years[0]), calcAge(years[3])]
+console.log(ages);
+console.log(ages1);
+
+
+
+const friends = ['Ram', 'Sita', 'Jay'];
+
+// Add elements in Array
+
+friends.push('Rob'); //Pushing or adding new data in Array
+const newLength = friends.push('Robby');//adding new data in Array and storing it in a variable
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('Rocky'); // Method which adds element at the beginning of the Array.
+console.log(friends);
+
+// Remove elements in Array
+
+friends.pop(); // Removes Last element from Array
+const popped = friends.pop();
+console.log(friends);
+console.log(popped);
+
+friends.shift(); // Removes First element from Array
+console.log(friends);
+
+// Return the index of that array element
+
+console.log(friends.indexOf('Jay'));
+console.log(friends.indexOf('Sita'));
+
+// ES6 method include to write conditions.
+
+friends.push(22);
+console.log(friends.includes('Steven')); //checks if that string is present inside array
+console.log(friends.includes(22));
+
+if(friends.includes('24')){
+    console.log("You have a friend called with this name");
+}
+else{
+    console.log("Sorry");
+}
+
+//Destructing of an Array
+
+let [a,b,c]=['A', 'B', 'C', 'D'];
+console.log(a,b,c);
+
+
+let students = ['Ram', 'Rohan', 'Shyam', 'Mohan', ['Sita', 'Pooja', "x"]];
+
+//Accessing Nested Array by 2nd way
+const boys = students[4];
+const girl = boys[2];
+console.log(girl);
+
+//Accessing Nested Array by 2nd way
+const ad = students[4][2];
+console.log(ad);
+
+//Accessing Nested Array by Destructuring
+
+let [,,,,[,girl2]]=['Ram', 'Rohan', 'Shyam', 'Mohan', ['Sita', 'Pooja', "x"]];
+console.log(girl2);
+
+
+//Rest Parameter using a function with 2 parameter and 1 rest parameter
+function myBio(fName, lName, ...otherInfo){
+    console.log(otherInfo);
+    return otherInfo;
+}
+let result = myBio("Stuti", "Singh", "Thomson Reuters", "Developer", "F");
+console.log(result);
+
+
+//Define a destructuring object with two regular variables and one rest variable
+const {fName, lName, ...otherInfo} ={
+    fName : "Stuti",
+    lName : "Singh",
+    companyName : "TR",
+    Gender : "Female"
+}
+console.log(otherInfo);
+
+//1st Example of Spread operator 
+    var array1 = [10, 20, 30, 40, 50];
+    var array2 = [...array1, 60];
+    console.log(array2);
+
+//1st Example of Spread operator using object
+    const obj = {
+        firstname: "Divit",
+        lastname: "Patidar",
+    };
+    const obj2 = { ...obj };
+    console.log(obj2);
+
+//Concat Method
+    const merged = array1.concat(array2);
+    console.log(merged);
+
+//Join method
+    let ar1 = ['a','b','c','d'];
+    const joined = ar1.join('<=>');
+    console.log(joined);
+
+//Fill method
+    const color = ['red', 'blue', 'green'];
+    color.fill('pink');
+    console.log(color);
+
+    const colors = ['red', 'blue', 'green'];
+    colors.fill('pink', 1, colors.length);
+    console.log(colors);
+
+// Sort method 
+let numbers = [0, 1, 2, 3, 10, 20, 30];
+numbers.sort((a, b) => a - b);
+console.log(numbers);
+
+// Sorting alphabets in descending order
+let animals = [
+    'cat', 'dog', 'elephant', 'bee', 'ant'
+];
+animals.sort((a, b) => {
+    if (a > b)
+        return -1;
+    if (a < b)
+        return 1;
+    return 0;
+});
+
+console.log(animals);
+
+// sorting array with mixed cases
+let mixedCaseAnimals = [
+    'Cat', 'dog', 'Elephant', 'bee', 'ant'
+];
+mixedCaseAnimals.sort(function (a, b) {
+    let x = a.toUpperCase(),
+     y = b.toUpperCase();
+    return x == y ? 0 : x > y ? 1 : -1;
+});
+console.log(mixedCaseAnimals);
+
+//Splice Method
+
+//deletes three elements of the scores array starting from the first element.
+let scores = [1, 2, 3, 4, 5];
+let deletedScores = scores.splice(0, 3);
+console.log(scores);
+console.log(deletedScores);
+
+//inserts one element after the second element.
+let color1 = ['red', 'green', 'blue'];
+color1.splice(2, 0, 'purple');
+console.log(color1);
+
+//replaces the second element by a new one.
+let languages = ['C', 'C++', 'Java', 'JavaScript'];
+languages.splice(1, 1, 'Python');
+console.log(languages); 
+
+//removing one element from the index 2 (3rd element) and adding a new element
+const names = ['tom', 'alex', 'bob'];
+const deleted = names.splice(2, 1, 'zack');
+console.log(deleted);
+console.log(names);
