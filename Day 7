@@ -1,0 +1,18 @@
+/*Test 1*/
+let scoreDolphins = calcAverage(10,11,12);
+let scoreKoalas = calcAverage(40,22,12);
+console.log(scoreDolphins, scoreKoalas);
+
+let checkWinner = function (avgDolphins, avgKoalas){
+    if(avgDolphins >= 2*avgKoalas){
+        console.log("Dolphins Wins here");
+    }
+    else if(avgKoalas>=2*avgDolphins){
+        console.log("Koalas Wins here");
+    }
+    else{
+        console.log("No team wins");
+    }
+}
+checkWinner(scoreDolphins, scoreKoalas);
+checkWinner(20,10);
