@@ -1,0 +1,50 @@
+//Array
+ const jonasArray = [
+     'Jonas',
+     'Singh',
+      64,
+      'Teacher',
+      ['Tom', 'Rocky']
+ ];
+
+//  Literal Objects
+ const jonas = {
+     firstName: 'Jonas',
+     lastName: 'Singh',
+      age: 64,
+      Job: 'Teacher',
+      Friends: ['Tom', 'Rocky']
+ };
+
+ console.log(jonas);
+//   dot notation to retrieve the data 
+ console.log(jonas.age);
+//   bracket notation 
+ console.log(jonas['lastName']);
+
+ const nameKey = 'Name';
+ console.log(jonas['first' + nameKey]);
+ console.log(jonas['last' + nameKey]);
+
+ console.log(jonas.'first' + nameKey);
+
+//  Taking user input to access object
+ const interestedIn = prompt('What do you know about Jonas?');
+//  . Notation
+ console.log(jonas.interestedIn); undefined output
+//  [] notation
+ console.log(jonas[interestedIn]);  Job
+
+ if(jonas[interestedIn]){
+  console.log(jonas[interestedIn]);
+ }
+ else{
+     console.log("Wrong Input");
+ }
+
+//  To add new properties in object suing dot and bracket notation
+ jonas.location = 'India';
+ jonas['twitter'] = '@jonastwitter';
+ console.log(jonas);
+ "Jonas has 2 friends, and his best friend is called Tom"
+ console.log(`${jonas.firstName} has ${jonas.Friends.length} friends, and his best friends is called ${jonas.Friends[0]}`)
