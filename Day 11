@@ -1,0 +1,27 @@
+// Callback fuctions
+
+setTimeout(function(){ console.log("timer")}, 3000); //Function Invokation with CallBack function
+
+function x(y){
+    console.log("x");
+    y(); 
+}
+x(function y(){
+    console.log("y")
+});
+
+//Event Listenera with callback functions
+
+  document.getElementById("clickMe").addEventListener("click", function xyz(){
+ console.log("Clicked");
+  });
+
+ //Event Listenera with closures
+
+ function attachEventListener(){
+    let count = 0;
+    document.getElementById("clickMe").addEventListener("click", function xyz(){
+        console.log("Clicked", ++count);
+         });
+ }
+ attachEventListener();
