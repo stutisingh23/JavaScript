@@ -1,0 +1,91 @@
+//Settimeout function question
+function x1(){
+    for(var i=1; i<=5; i++){
+        setTimeout(function(){
+            console.log(i);}, i*1000
+        );
+    }
+    console.log("Namaste");
+ }
+ x1();
+
+// Using let variable
+
+ function x2(){
+    for(let i=1; i<=5; i++){
+        setTimeout(function(){
+            console.log(i);}, i*1000
+        );
+    }
+    console.log("Namaste");
+ }
+ x2();
+
+//Using Closures
+
+function x3(){
+   for(var i=1; i<=5; i++){
+       function close(a){
+           setTimeout(function(){
+               console.log(a);}, i*1000
+           );
+       }
+       close(i);
+   }
+   console.log("Namaste");
+}
+x3();
+
+
+//High-Order-Functions
+
+const radius = [10, 20, 30, 40];
+
+const calculateArea = function (radius){
+    const output = [];
+    for (let i=0; i<radius.length ; i++){
+        output.push(3.14*radius[i]*radius[i]);
+    }
+    return output;
+};
+console.log(calculateArea(radius));
+
+const calculateCircumference = function (radius){
+    const output = [];
+    for (let i=0; i<radius.length ; i++){
+        output.push(2*3.14*radius[i]);
+    }
+    return output;
+};
+console.log(calculateCircumference(radius));
+
+const calculateDiameter = function (radius){
+    const output = [];
+    for (let i=0; i<radius.length ; i++){
+        output.push(2*radius[i]);
+    }
+    return output;
+};
+console.log(calculateDiameter(radius));
+
+
+// Optimized way for same code
+const area = function (radius){
+    return 3.14*radius*radius;
+}
+const circumference = function (radius){
+    return 2*3.14*radius;
+}
+const diameter = function (radius){
+    return 2*radius;
+}
+const calculate = function (radius, logic){
+    const output = [];
+    for (let i=0; i<radius.length ; i++){
+        output.push(logic(radius[i]));
+    }
+    return output;
+};
+console.log(calculate(radius, area));
+console.log(calculate(radius, circumference));
+console.log(calculate(radius, diameter));
